@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <title>CAR2RENT - Каршеринг авто в Минске</title>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <h1>car2rent</h1>
+            <p>тел. +375 (29) 218-27-50</p>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">Новости и акции</a>
+                </li>
+                <li>
+                    <a href="#">Приложение</a>
+                </li>
+                <li>
+                    <a href="#">Как пользоваться?</a>
+                </li>
+                <li>
+                    <a href="#">Условия дружбы</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+            </ul>
+        </nav>
+</header>
+<main>
+        <div class="slider">
+            <div class="slider__wrapper">
+              <div class="slider__item">
+                    <img src="images/1.png" height="250px" alt="машина">
+                    <div>
+                    <h2>Предлогаем прокатиться на авто свежих лет выпуска</h2>
+                    <p>В нашем наборе только новые автомобили, но также найдутся и для людителей антиквариата и всё по доступным ценам.</p>
+                    </div>
+              </div>
+              <div class="slider__item">
+                    <img src="images/2.png" height="250px" alt="Экономь">
+                    <div>
+                    <h2>Пригласи друга и получай % с его поездок! (до 10%)</h2>
+                    <p>Достуна партнёрская программа для наших клиентов. Поделись с другом партнерской ссылкой на наше приложение и накапливай % с его оплаты. Можешь использовать накопленные бонусы как скидку</p>
+                    </div>
+              </div>
+              <div class="slider__item">
+                  <img src="images/3.png" height="250px">
+                  <div>
+                    <h2>Только один раз в год скида на поездку до 100%!</h2>
+                    <p>Только одну неделю в году у нас ты можешь арендовать авто по самым вкусным ценам и в нашей партнерской программе % увеличивается <span style="color: red;">до 40%</span>.</p>
+                </div>
+              </div>
+            </div>
+            <a class="slider__control slider__control_left" href="#" role="button"></a>
+            <a class="slider__control slider__control_right slider__control_show" href="#" role="button"></a>
+          </div>
+
+
+<section style="display: flex; justify-content: space-around;">
+    <div>
+        <img src="images/lamborghini.png" alt="lamborghini" width="400px">
+    </div>
+    <div style="background-color: #ececec; border-radius: 5px; width: 45%; padding: 10px;">
+        <h2>CAR2RENT - Аренда авто в Минске</h2>
+        <p>Можно легко арендовать автомобиль, если на твоём смартфоне установлено наше приложение. Для этого надо просто найти наш автомобиль на улице и оплатить поездку!</p>
+        <p><a href="#">Скачать приложение</a></p>
+    </div>
+</section>
+
+          <section>
+              <h2>Наши преимущества</h2>
+              <div id="flex_container">
+                <div class="flex_item">
+                      <h3>Комфорт</h3>
+                      <p><img src="images/advantages-icon-1.png" alt="">Выбирайте марку и модель машины</p>
+                </div>
+                <div class="flex_item">
+                    <h3>Безопасность</h3>
+                    <p><img src="images/advantages-icon-2.png" alt="">Проверенные и вежливые водители</p>
+                </div>
+                <div class="flex_item">
+                    <h3>Доступность</h3>
+                    <p><img src="images/advantages-icon-3.png" alt="">Дешевле такси, удобнее автобуса</p>
+                </div>
+              </div>
+          </section>
+</main>
+<footer>
+<ul class="footer_menu">
+    <li>
+        <a href="#">О проекте</a>
+    </li>
+    <li>
+        <a href="#">Способы оплаты</a>
+    </li>
+    <li>
+        <a href="#">Обратная связь</a>
+    </li>
+    <li>
+        <a href="#">Популярные маршруты</a>
+    </li>
+    <li>
+        <a href="#">Пользовательское соглашение</a>
+    </li>
+    <li>
+        <a href="#">Политика конфиденциальности</a>
+    </li>
+</ul>    
+<div id="apps">
+    <a href="#">apple store</a>
+    <a href="#">play market</a>
+</div>
+<div>Егоров Дмитрий &copy; 2020 Верстал сам!</div>
+</footer>
+
+    <script>
+        'use strict';
+        var multiItemSlider = (function () {
+          return function (selector, config) {
+            var
+              _mainElement = document.querySelector(selector), // основный элемент блока
+              _sliderWrapper = _mainElement.querySelector('.slider__wrapper'), // обертка для .slider-item
+              _sliderItems = _mainElement.querySelectorAll('.slider__item'), // элементы (.slider-item)
+              _sliderControls = _mainElement.querySelectorAll('.slider__control'), // элементы управления
+              _sliderControlLeft = _mainElement.querySelector('.slider__control_left'), // кнопка "LEFT"
+              _sliderControlRight = _mainElement.querySelector('.slider__control_right'), // кнопка "RIGHT"
+              _wrapperWidth = parseFloat(getComputedStyle(_sliderWrapper).width), // ширина обёртки
+              _itemWidth = parseFloat(getComputedStyle(_sliderItems[0]).width), // ширина одного элемента    
+              _positionLeftItem = 0, // позиция левого активного элемента
+              _transform = 0, // значение транфсофрмации .slider_wrapper
+              _step = _itemWidth / _wrapperWidth * 100, // величина шага (для трансформации)
+              _items = []; // массив элементов
+            // наполнение массива _items
+            _sliderItems.forEach(function (item, index) {
+              _items.push({ item: item, position: index, transform: 0 });
+            });
+    
+            var position = {
+              getMin: 0,
+              getMax: _items.length - 1,
+            }
+    
+            var _transformItem = function (direction) {
+              if (direction === 'right') {
+                if ((_positionLeftItem + _wrapperWidth / _itemWidth - 1) >= position.getMax) {
+                  return;
+                }
+                if (!_sliderControlLeft.classList.contains('slider__control_show')) {
+                  _sliderControlLeft.classList.add('slider__control_show');
+                }
+                if (_sliderControlRight.classList.contains('slider__control_show') && (_positionLeftItem + _wrapperWidth / _itemWidth) >= position.getMax) {
+                  _sliderControlRight.classList.remove('slider__control_show');
+                }
+                _positionLeftItem++;
+                _transform -= _step;
+              }
+              if (direction === 'left') {
+                if (_positionLeftItem <= position.getMin) {
+                  return;
+                }
+                if (!_sliderControlRight.classList.contains('slider__control_show')) {
+                  _sliderControlRight.classList.add('slider__control_show');
+                }
+                if (_sliderControlLeft.classList.contains('slider__control_show') && _positionLeftItem - 1 <= position.getMin) {
+                  _sliderControlLeft.classList.remove('slider__control_show');
+                }
+                _positionLeftItem--;
+                _transform += _step;
+              }
+              _sliderWrapper.style.transform = 'translateX(' + _transform + '%)';
+            }
+    
+            // обработчик события click для кнопок "назад" и "вперед"
+            var _controlClick = function (e) {
+              if (e.target.classList.contains('slider__control')) {
+                e.preventDefault();
+                var direction = e.target.classList.contains('slider__control_right') ? 'right' : 'left';
+                _transformItem(direction);
+              }
+            };
+    
+            var _setUpListeners = function () {
+              // добавление к кнопкам "назад" и "вперед" обрботчика _controlClick для событя click
+              _sliderControls.forEach(function (item) {
+                item.addEventListener('click', _controlClick);
+              });
+            }
+    
+            // инициализация
+            _setUpListeners();
+    
+            return {
+              right: function () { // метод right
+                _transformItem('right');
+              },
+              left: function () { // метод left
+                _transformItem('left');
+              }
+            }
+    
+          }
+        }());
+    
+        var slider = multiItemSlider('.slider')
+    
+      </script>
+    
+</body>
+</html>
