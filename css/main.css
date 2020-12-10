@@ -40,19 +40,17 @@ nav ul{
     display: flex;
     justify-content: space-around;
     border-radius: 10px;
-    border: 1px solid #ececec;
+    border: 1px solid #dddddd;
 }
 
 nav ul li{
     list-style: none;
     padding: 10px 15px;
-    transition: all 1s ease-out;
 }
 
 nav ul li:hover{
     border-bottom: 5px solid #a9a9a9;
     padding-bottom: 5px;
-    transition: all 0.3s ease;
 }
 
 nav ul li a{
