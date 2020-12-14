@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vegan Delicious</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header>
+<div id="logo">
+    <img src="images/logo.png" alt="Vegan Delicious">
+</div>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Контакты</a>
+            </li>
+            <li>
+                <a href="#">Доставка</a>
+            </li>
+            <li>
+                <a href="#">Продукция</a>
+            </li>
+            <li>
+                <a href="#">О компании</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <div class="slider">
+            <div class="slider__wrapper">
+                <div class="slider__items">
+                    <div class="slider__item">
+                        <div style="height: 250px; background: orange;"></div>
+                    </div>
+                    <div class="slider__item">
+                        <div style="height: 250px; background: green;"></div>
+                    </div>
+                    <div class="slider__item">
+                        <div style="height: 250px; background: violet;"></div>
+                    </div>
+                    <div class="slider__item">
+                        <div style="height: 250px; background: coral;"></div>
+                    </div>
+                </div>
+            </div>
+            <a class="slider__control slider__control_prev" href="#" role="button"></a>
+            <a class="slider__control slider__control_next slider__control_show" href="#" role="button"></a>
+        </div>
+    </section>
+    <section>
+        <ul>
+            <li>
+                <img src="images/photo5768443062429789063.jpg" alt="">
+                <h3>Пирожные</h3>
+            </li>
+            <li>
+                <img src="images/photo5806769873110543214.jpg" alt="">
+                <h3>Вафли</h3>
+            </li>
+            <li>
+                <img src="images/photo5829272886106499696.jpg" alt="">
+                <h3>Торты</h3>
+            </li>
+            <li>
+                <img src="images/photo5797520673923509059.jpg" alt="">
+                <h3>Мороженое</h3>
+            </li>
+        </ul>
+    </section>
+
+</main>
+
+<script type="text/javascript" src="slider.js"></script>
+<script type="text/javascript">
+slideShow('.slider', {
+isAutoplay: true
+});
+</script>
+</body>
+</html>
